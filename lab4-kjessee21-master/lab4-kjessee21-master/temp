@@ -1,0 +1,51 @@
+#!/usr/bin/python3
+# Kaden Jessee
+# Lab 4 - Temp
+# CS 3030 - Scripting Languages
+
+def fahrenheitToCelsius(fahrenheit):
+	C = (fahrenheit - 32.0) * (5.0/9.0)
+	return C
+
+def celsiusToFahrenheit(celsius):
+	F = (9.0/5.0) * celsius + 32.0
+	return F
+
+print("""Welcome to the CS 3030 Temperature Conversion Program""")
+
+while True:
+	print ("Main Menu\n")
+	print (" 1. Fahrenheit to Celsius\n")
+	print (" 2. Celsius to Fahrenheit\n")
+	print (" 3. Exit Program\n")
+	x = input(" Please enter 1, 2 or 3: ")
+
+	#handle for it user selects 3, break out
+	if x == "3":
+		exit(0) 
+
+	elif x == "1":
+		x = input("\nPlease enter degrees Fahrenheit: ")
+		try:
+			degrees = float(x)
+			convertedDegrees = fahrenheitToCelsius(degrees)
+		except:
+			print("\nInvalid entry")
+			continue
+		print("\n%.1f degrees Fahrenheit equals %.1f degrees Celsius" % (degrees, convertedDegrees))
+		continue
+	elif x == "2":
+		x = input("\nPlease enter degrees Celsius: ")
+		try:
+			degrees = float(x)
+			convertedDegrees = celsiusToFahrenheit(degrees)
+		except:
+			print("\nInvalid entry")
+			continue
+		print("\n%.1f degrees Celsius equals %.1f degrees Fahrenheit" % (degrees, convertedDegrees))
+		continue
+	
+	else:
+		print("\nInvalid entry")
+		continue
+
